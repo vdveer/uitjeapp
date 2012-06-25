@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Uitje 2012 Map</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="leaflet.ie.css" /><![endif]-->
+
+	<script src="leaflet.js"></script>
+	<script src="cordova.js"></script>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+		html, body, #map {
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="map"></div>
+<!--
+Als current location != krakow , dan zoomlevel 5, NL center
+Init map AFTER init phonegap event, so geolocation api is used
+In config.xml add location api
+-->
+	<script>
+		var map;
+		function initmap(){
+			map = new L.Map('map');
+
+			var cloudmadeUrl = '{z}/{x}/{y}.png',
+				cloudmadeAttribution = '<a href="index.html">BACK TO APP</a>',
+				cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 16, minZoom: 8, attribution: cloudmadeAttribution});
+			
+			var hotel = new L.Marker(new L.LatLng(50.07073, 19.94526));
+			var restaurant = new L.Marker(new L.LatLng(50.05461, 19.93934));
+
+			hotel.on('click', function(e){alert('hotel');});
+			restaurant.on('click', function(e){alert('restaurant');});
+
+			map.addLayer(cloudmade);
+			map.addLayer(restaurant);
+			map.addLayer(hotel);
+	
+			map.on('locationfound', onLocationFound);
+			map.on('locationerror', onLocationError);
+	
+			map.locateAndSetView();
+		
+			function onLocationFound(e) {
+				var radius = e.accuracy / 2;
+	
+				var circle = new L.Circle(e.latlng, radius);
+				circle.on('click',function(e){alert('you');});
+				map.addLayer(circle);
+
+				if(isInCracow(e.latlng)){ 
+					map.setZoom(14);
+					//alert('in krakow'); 
+				} 
+				else { 
+					map.setZoom(8); 
+					//alert('niet in krakow'); 
+				}
+			}
+	
+			function onLocationError(e) {
+				alert("Unable to locate you, zooming to Krakow city centre.");
+				map.setView(new L.LatLng(50.061657,19.93731), 14)
+			}
+
+			function isInCracow(l){
+				//alert('in function');
+				if(l.lat < 50.08116 && l.lat > 50.0416 && l.lng < 19.97829 && l.lng > 19.91152){
+					return true;
+				}
+				return false;			
+			}
+		}
+
+		document.addEventListener("deviceready", initmap, false);
+
+		//initmap();//remove when deploying
+	</script>
+</body>
+</html>
+
