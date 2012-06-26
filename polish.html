@@ -2,23 +2,73 @@
 <html>
 <head>
 	<title>Uitje 2012</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script src="cordova.js"></script>
+	<script src="general.js"></script>
 	<style>
 		body {
 			padding: 0;
 			margin: 0;
 		}
-		html, body, #map {
-			height: 100%;
+		div.test {
+			border-style: solid none;
+			position: relative;
+			border-color: #cccccc -moz-use-text-color #cccccc;
+  			border-left: medium none;
+    			border-right: medium none;
+			border-style: solid none;
+			border-width: 1px medium;
+			height: 45px;
+			/* fallback */
+  			background-color: #1a82f7;
+  			background-image: url(images/linear_bg_1.png);
+  			background-repeat: repeat-y;
+  
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, left top, right top, from(#1a82f7), to(#2F2727));
+  
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(left, #2F2727, #1a82f7);
+  
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(left, #2F2727, #1a82f7);
+  
+  /* IE 10 */
+  background: -ms-linear-gradient(left, #2F2727, #1a82f7);
+  
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(left, #2F2727, #1a82f7);
+			box-shadow: 0 1px 3px #888888;
+			height: 45px;
+			z-index: 2000;
 		}
+		div.logo{
+			background: url("images/back.png") no-repeat scroll 0 0 transparent;
+    			float: left;
+			height: 36px;
+    			margin: 5px -6px 0 6px;
+   			width:50px;
+			text-decoration:none;    		
+		}
+		html, body, #map {
+			
+		}
+		h1.titles {
+			text-decoration: none; 
+			font-size: 18px; 
+			text-align: left;
+			position: relative;
+			color: #FFFFFF;
+		}
+		a.header { text-decoration:none; }
 	</style>
 </head>
 <body>
 <!-- TO BE DESIGNED FROM HERE -->
-<h1>Polish phrases</h1>	
+<a class="header" href="index.html"><div class='test'>
+<div class='logo' id='logo'></div>
+<h1 class='titles'>Polish Language</h1></div></a>
 <h2> <span class="mw-headline" id="Pronunciation_guide">Pronunciation guide</span></h2>
 <h3> <span class="mw-headline" id="Alphabet">Alphabet</span></h3>
 <ul><li> A <b>Ą</b> B C <b>Ć</b> D E <b>Ę</b> F G H I J K L <b>Ł</b> M N <b>Ń</b> O <b>Ó</b> P R S <b>Ś</b> T U W Y Z <b>Ź</b> <b>Ż</b>

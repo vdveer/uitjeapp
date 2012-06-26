@@ -11,21 +11,117 @@
 			padding: 0;
 			margin: 0;
 		}
+		div.test {
+			
+			border-style: solid none;
+			position: relative;
+			border-color: #cccccc -moz-use-text-color #cccccc;
+  			border-left: medium none;
+    			border-right: medium none;
+			border-style: solid none;
+			border-width: 1px medium;
+		
+			/* fallback */
+  			background-color: #1a82f7;
+  			background-image: url(images/linear_bg_1.png);
+  			background-repeat: repeat-y;
+  
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, left top, right top, from(#1a82f7), to(#2F2727));
+  
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(left, #2F2727, #1a82f7);
+  
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(left, #2F2727, #1a82f7);
+  
+  /* IE 10 */
+  background: -ms-linear-gradient(left, #2F2727, #1a82f7);
+  
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(left, #2F2727, #1a82f7);
+			box-shadow: 0 1px 3px #888888;
+			
+			z-index: 2000;
+			height: 45px;
+		}
+		div.logo{
+			background: url("images/logo.png") no-repeat scroll 0 0 transparent;
+    			float: left;
+			height: 36px;
+    			margin: 5px -6px 0 6px;
+   			width:50px;
+		}
 		html, body, #map {
-			height: 100%;
+			margin: 0; border:0;
+		}
+		h1.titles {
+			text-decoration: none; 
+			font-size: 18px; 
+			text-align: left;
+			position: relative;
+			color: #FFFFFF;
+		}
+		span {
+			text-decoration: none;
+			color: #000085;
+			font-size: 10px;
+		}
+		a {
+			text-decoration: none;
+			color: #000085;
+			font-size: 10px;
 		}
 	</style>
 </head>
 <body>
 <!-- TO BE DESIGNED FROM HERE -->
-<h1>Uitje 2012</h1>	
-Natuurlijk moet deze page nog designed worden, maar voor nu:<br/><br/>
+<div class='test'>
+<div class='logo'></div>
+<h1 class='titles'>Bestemming :: Krakow</h1></div>
 
-- <a href="map.html">MAP</a><br/>
-- <a href="polish.html">Polish Phrases</a><br/>
-- <a href="hotel.html">Hotel info</a><br/>
-- <a href="restaurant.html">Restaurant info</a><br/>
-- <a href="contact.html">CONTACT</a>
+<div class='home'>
+	<a href="map.html">
+		<img src="images/maps64.png"/>
+		<span>Kaart</span>
+	</a>
+</div>
+
+<div class='home'>
+	<a href="polish.html">
+		<img src="images/language64.png" />
+		<span>Poolse taal</span>
+	</a>
+</div>
+
+<div class='home'>
+	<a href="hotel.html">
+		<img src="images/hotel64.png" />
+		<span>Hotel</span>
+	</a>
+</div>
+
+<div class='home'>
+	<a href="restaurant.html">
+		<img src="images/rest64.png" />
+		<span>Restaurants</span>
+	</a>
+</div>
+
+<div class='home'>
+	<a href="activities.html">
+		<img src="images/activity64.png" />
+		<span>Activiteiten</span>
+	</a>
+</div>
+
+<div class='home'>
+	<a href="contact.html">
+		<img src="images/contact64.png" />
+		<span>Contant</span>
+	</a>
+</div>
+	
 <!-- END OF PAGE -->
 </body>
 </html>
