@@ -1,8 +1,4 @@
 
-		body {
-			padding: 0;
-			margin: 0;
-		}
 		div.test {
 			
 			border-style: solid none;
@@ -40,7 +36,7 @@
 			background: url("images/logo.png") no-repeat scroll 0 0 transparent;
     			float: left;
 			height: 36px;
-    			margin: 5px -6px 0 6px;
+    			margin: 5px 0px 0px 6px;
    			width:50px;
 		}
 		html, body, #map {
@@ -68,7 +64,7 @@
 			font-family: Helvetica,Arial,sans-serif;
 			font-size: 0.9em;
 			padding: 10px;
-   			width: 320px; /*change this for rotation*/
+   			width: 300px; /*change this for rotation*/
 			position: relative;	
 		}
 		div.home {
