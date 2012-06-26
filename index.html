@@ -26,22 +26,21 @@
   			background-image: url(images/linear_bg_1.png);
   			background-repeat: repeat-y;
   
-  /* Safari 4-5, Chrome 1-9 */
-  background: -webkit-gradient(linear, left top, right top, from(#1a82f7), to(#2F2727));
-  
-  /* Safari 5.1, Chrome 10+ */
-  background: -webkit-linear-gradient(left, #2F2727, #1a82f7);
-  
-  /* Firefox 3.6+ */
-  background: -moz-linear-gradient(left, #2F2727, #1a82f7);
-  
-  /* IE 10 */
-  background: -ms-linear-gradient(left, #2F2727, #1a82f7);
-  
-  /* Opera 11.10+ */
-  background: -o-linear-gradient(left, #2F2727, #1a82f7);
+  			/* Safari 4-5, Chrome 1-9 */
+			background: -webkit-gradient(linear, left top, right top, from(#1a82f7), to(#2F2727));
+			  
+			  /* Safari 5.1, Chrome 10+ */
+			  background: -webkit-linear-gradient(left, #2F2727, #1a82f7);
+			  
+			  /* Firefox 3.6+ */
+			  background: -moz-linear-gradient(left, #2F2727, #1a82f7);
+			  
+			  /* IE 10 */
+			  background: -ms-linear-gradient(left, #2F2727, #1a82f7);
+			  
+			  /* Opera 11.10+ */
+			  background: -o-linear-gradient(left, #2F2727, #1a82f7);
 			box-shadow: 0 1px 3px #888888;
-			
 			z-index: 2000;
 			height: 45px;
 		}
@@ -61,6 +60,7 @@
 			text-align: left;
 			position: relative;
 			color: #FFFFFF;
+			font-family: Helvetica,Arial,sans-serif;
 		}
 		span {
 			text-decoration: none;
@@ -72,6 +72,37 @@
 			color: #000085;
 			font-size: 10px;
 		}
+		div.homebase {
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 0.9em;
+    			margin: 9px auto 0;
+   			width: 300px;
+		}
+		div.home {
+			width: 70px;
+			height: 80px;
+			position: relative;
+			padding: 5px;
+			margin: 2px;
+			display: block;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			border-bottom-left-radius: 7px;
+			background: rgba(0, 0, 0, 0.25);
+		}
+		img { position: relative;
+			float:top;}
+		span { position:absolute; top:74px; left:20px; }
+		div.up {
+			top: 0;
+			float: left;
+		}
+		div.down{
+			bottom: 1;
+			float:left;
+		}
+
 	</style>
 </head>
 <body>
@@ -79,49 +110,48 @@
 <div class='test'>
 <div class='logo'></div>
 <h1 class='titles'>Bestemming :: Krakow</h1></div>
-
-<div class='home'>
+<div class='homebase'>
+<div class='home up'>
 	<a href="map.html">
 		<img src="images/maps64.png"/>
 		<span>Kaart</span>
 	</a>
 </div>
 
-<div class='home'>
+<div class='home up'>
 	<a href="polish.html">
 		<img src="images/language64.png" />
 		<span>Poolse taal</span>
 	</a>
 </div>
 
-<div class='home'>
+<div class='home up'>
 	<a href="hotel.html">
 		<img src="images/hotel64.png" />
 		<span>Hotel</span>
 	</a>
 </div>
-
-<div class='home'>
+<div class='home down'>
 	<a href="restaurant.html">
 		<img src="images/rest64.png" />
 		<span>Restaurants</span>
 	</a>
 </div>
 
-<div class='home'>
+<div class='home down'>
 	<a href="activities.html">
 		<img src="images/activity64.png" />
 		<span>Activiteiten</span>
 	</a>
 </div>
 
-<div class='home'>
+<div class='home down'>
 	<a href="contact.html">
 		<img src="images/contact64.png" />
-		<span>Contant</span>
+		<span>Contact</span>
 	</a>
 </div>
-	
+</div>
 <!-- END OF PAGE -->
 </body>
 </html>
