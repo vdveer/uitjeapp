@@ -63,7 +63,45 @@
 			color: #FFFFFF;
 			font-family: Helvetica,Arial,sans-serif;
 		}
-		a.header { text-decoration:none; }
+		h1.boven {
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 18px;
+		}
+		a { text-decoration:none; }
+
+		div.homebase {
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 0.9em;
+			padding: 10px;
+   			width: 300px; /*change this for rotation*/
+			position: relative;	
+		}
+		div.home {
+			width: 200px;
+			height: 100px;
+			position: relative;
+			padding: 5px;
+			margin: 10px;
+			display: block;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			border-bottom-left-radius: 7px;
+			background: rgba(0, 0, 0, 0.25);
+		}
+		img { position: relative; margin: 10px;
+			 }
+		span { position:relative;
+			float: top;
+			 }
+		div.up {
+			top: 0;
+
+		}
+		div.down{
+			bottom: 1;
+
+		}
 	</style>
 </head>
 <body>
@@ -71,14 +109,27 @@
 <a class="header" href="index.html"><div class='test'>
 <div class='logo' id='logo'></div>
 <h1 class='titles'>Contact</h1></div></a>
-<h1>Onderwijs</h1>	
-Wouter van der Veer<br/>
-<a href="mailto:wouter.van.der.veer@topicus.nl">MAIL</a> of <a href="tel:0031610027697">BEL</a>
-<h1>I&I</h1>
-Vincent Heet<br/>
-<a href="mailto:vincent.heet@topicus.nl">MAIL</a> of <a href="tel:0031652192318">BEL</a>
-<!-- END OF PAGE -->
-<br/><br/><a href="index.html">BACK</a>
+
+<center><div class='homebase'>
+<h1 class='boven'>Onderwijs</h1>
+<div class='home up'>
+		<center>	
+			<span id='in'>Wouter van der Veer</span><br/>
+			<a href="tel:0031610027697"><img src="images/call.png"/></a>
+			<a href="mailto:wouter.van.der.veer@topicus.nl"><img src="images/mail.png"/></a>
+		</center>
+</div>
+<h1 class='boven'>I&I</h1>
+<div class='home down'>
+		<center>	
+			<span id='in'>Vincent Heet</span><br/>
+			<a href="tel:0031652192318"><img src="images/call.png"/></a>
+			<a href="mailto:vincent.heet@topicus.nl"><img src="images/mail.png"/></a>
+		</center>
+</div>
+
+</center>
+
 </body>
 </html>
 
