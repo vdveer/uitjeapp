@@ -1,0 +1,99 @@
+
+		body {
+			padding: 0;
+			margin: 0;
+		}
+		div.test {
+			
+			border-style: solid none;
+			position: relative;
+			border-color: #cccccc -moz-use-text-color #cccccc;
+  			border-left: medium none;
+    			border-right: medium none;
+			border-style: solid none;
+			border-width: 1px medium;
+		
+			/* fallback */
+  			background-color: #1a82f7;
+  			background-image: url(images/linear_bg_1.png);
+  			background-repeat: repeat-y;
+  
+  			/* Safari 4-5, Chrome 1-9 */
+			background: -webkit-gradient(linear, left top, right top, from(#1a82f7), to(#2F2727));
+			  
+			  /* Safari 5.1, Chrome 10+ */
+			  background: -webkit-linear-gradient(left, #2F2727, #1a82f7);
+			  
+			  /* Firefox 3.6+ */
+			  background: -moz-linear-gradient(left, #2F2727, #1a82f7);
+			  
+			  /* IE 10 */
+			  background: -ms-linear-gradient(left, #2F2727, #1a82f7);
+			  
+			  /* Opera 11.10+ */
+			  background: -o-linear-gradient(left, #2F2727, #1a82f7);
+			box-shadow: 0 1px 3px #888888;
+			z-index: 2000;
+			height: 45px;
+		}
+		div.logo{
+			background: url("images/logo.png") no-repeat scroll 0 0 transparent;
+    			float: left;
+			height: 36px;
+    			margin: 5px -6px 0 6px;
+   			width:50px;
+		}
+		html, body, #map {
+			margin: 0; border:0;
+		}
+		h1.titles {
+			text-decoration: none; 
+			font-size: 18px; 
+			text-align: left;
+			position: relative;
+			color: #FFFFFF;
+			font-family: Helvetica,Arial,sans-serif;
+		}
+		span {
+			text-decoration: none;
+			color: #000085;
+			font-size: 10px;
+		}
+		a {
+			text-decoration: none;
+			color: #000085;
+			font-size: 10px;
+		}
+		div.homebase {
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 0.9em;
+			padding: 10px;
+   			width: 320px; /*change this for rotation*/
+			position: relative;	
+		}
+		div.home {
+			width: 70px;
+			height: 80px;
+			position: relative;
+			padding: 5px;
+			margin: 10px;
+			display: block;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			border-bottom-left-radius: 7px;
+			background: rgba(0, 0, 0, 0.25);
+		}
+		img { position: relative;
+			float:top;}
+		span { position:relative;
+			
+			 }
+		div.up {
+			top: 0;
+			float: left;
+		}
+		div.down{
+			bottom: 1;
+			float:left;
+		}
