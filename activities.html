@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script src="cordova.js"></script>
-	<script src="general.js"></script>
+	<script src="hotel.js"></script>
 	<style>
 		body {
 			padding: 0;
@@ -64,14 +64,119 @@
 			font-family: Helvetica,Arial,sans-serif;
 		}
 		a.header { text-decoration:none; }
+		div.infoblock	 {
+			/*width: 200px;
+			height: 100px;*/
+			position: relative;
+			padding: 5px;
+			margin: 10px;
+			display: block;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			border-bottom-left-radius: 7px;
+			background: rgba(0, 0, 0, 0.25);
+		}	
+		span.header {
+			position: relative;
+			top: 10px;
+			bottom: 5px;
+			margin: 10px;
+			color: #FFFFFF;
+			font-family: Helvetica,Arial,sans-serif;
+		}
+		span.headerblack {
+			position: relative;
+			top: 10px;
+			bottom: 5px;
+			margin: 10px;
+			font-family: Helvetica,Arial,sans-serif;
+		}
+		span.copyright {
+			font-size: 10px; padding: 17px;
+		}
+		span.inhoud {
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 12px;
+		}
+		b {
+			color: #7D6971;
+		}
+		#hideZuipen, #hidegeschiedenis, #zien, #traditie, #hotelinfo{
+			margin: 10px;
+		}
 	</style>
 </head>
 <body>
 <!-- TO BE DESIGNED FROM HERE -->
 <a class="header" href="index.html"><div class='test'>
 <div class='logo' id='logo'></div>
-<h1 class='titles'>Activities</h1></a>
-Hier komt het vluchtenschema, de geplande activiteiten en een algehele tijdsplanning, zodat jullie mij geen vragen gaan stellen over tijden;-)
+<h1 class='titles'>Activiteiten</h1></div></a>
+
+<div class='infoblock' onclick="javascript:toggleElement('hotelinfo');">
+<span class='header' id='hotelinfoTitle'>Vluchtenschema <b>v</b></span><br/><br/>
+<div id='hotelinfo' style="display: none;">
+<span class='inhoud'>
+<b>Main (Amsterdam - Krakow)</b><br/>
+EuroLot K2 414 / 31-AUG-2012 / 15.40u<br/>
+EuroLot K2 413 / 02-SEP-2012 / 14.05u<br/><br/>
+<b>Other (Eindhoven - Katowice)</b><br/>
+WizzAir / 31-AUG-2012 / 13.35u<br/>
+WizzAir / 02-SEP-2012 / 16.45u<br/><br/>
+</span>
+</div>
+</div>
+
+<!-- start of infoblocks -->
+<div class='infoblock'  onclick="javascript:toggleElement('hidegeschiedenis');">
+<span class='header' id='hidegeschiedenisTitle'>Vrijdag <b>v</b></span><br/><br/>
+<div id="hidegeschiedenis" style="display: none;">
+<span class='inhoud'>
+19.00u :: Aankomst hotel<br/>
+19.30u :: Diner in hotel<br/>
+21.30u :: Cafe<br/>
+</span></div></div>
+
+
+<div class='infoblock' onclick="javascript:toggleElement('hideZuipen');">
+<span class='header' id='hideZuipenTitle'>Zaterdag <b>v</b></span><br/><br/>
+<div id='hideZuipen' style="display: none;">
+<span class='inhoud'>
+08.30u :: Ontbijt<br/>
+10.00u :: Guided tour<br/>
+12.30u :: Vrij tijd<br/>
+14.00u :: Kleiduif schieten<br/>
+14.00u :: Offroad rijden<br/>
+17.30u :: Terug bij hotel<br/>
+18.30u :: Naar restaurant<br/>
+19.00u :: Diner<br/>
+21.30u :: Cafe<br/>
+</span>
+</div>
+</div>
+
+<div class='infoblock' onclick="javascript:toggleElement('zien');">
+<span class='header' id='zienTitle'>Zondag <b>v</b></span><br/><br/>
+<div id='zien' style="display: none;">
+<span class='inhoud'>
+08.30u :: Ontbijt<br/>
+09.30u :: Vrije ochtend<br/>
+11.45u :: Vertrek bus (main)<br/>
+13.00u :: Vertrek taxi (other)<br/>
+</span>
+</div>
+</div>
+
+<div class='infoblock' onclick="javascript:toggleElement('traditie');">
+<span class='header' id='traditieTitle'>Meer? <b>v</b></span><br/><br/>
+<div id='traditie' style="display: none;">
+<span class='inhoud'>
+Zondag 23-dec-2012 t/m woensdag 2-jan-2013 gaan we tien dagen door China trekken met collega's en vrienden. Zin om mee te gaan? Laat het me weten via de contact mogelijkheden in deze app.
+</span>
+</div>
+</div>
+<span class='copyright'>Bron: wikipedia.org</span>
+<!-- end of infoblocks -->
 <!-- END OF PAGE -->
 </body>
 </html>

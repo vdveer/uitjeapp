@@ -3,15 +3,18 @@
 <head>
 	<title>Uitje 2012</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script src="cordova.js"></script>
 	<script src="general.js"></script>
+	<link rel="stylesheet" href="restaurant.css" />
 	<style>
+
 		body {
 			padding: 0;
 			margin: 0;
 		}
+	
 		div.test {
 			border-style: solid none;
 			position: relative;
@@ -62,45 +65,167 @@
 			position: relative;
 			color: #FFFFFF;
 		}
-		a.header { text-decoration:none; }
+		a { text-decoration:none; color: #ffffff; size: 14px;}
+		div.pageholder {
+			
+		}
+		div.days {
+			position:relative;	
+			top:20px;
+			bottom:20px;
+			width:250px;
+		}
+		div.menu {
+			position:relative;
+			top: 30px;
+			width: 300px;
+			margin: 10px;
+			display: block;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			border-bottom-left-radius: 7px;
+			background: rgba(0, 0, 0, 0.25);
+			float:left;
+			left: 50%;
+    			margin-left: -150px;
+			
+		}
+		span.dayfri {
+			position:relative;
+			display: block;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			border-bottom-left-radius: 7px;
+			background: rgba(0, 0, 0, 0.25);
+			width: 100px;
+			float:left;
+		}
+		span.daysat {
+			position:relative;
+			display: block;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			border-bottom-left-radius: 7px;
+			background: rgba(0, 0, 0, 0.25);
+			width: 100px;
+			float:right;
+		}
+		span.headermenu{
+			font-family: Helvetica,Arial,sans-serif;
+			color: #7D6971;
+			font-size: 20px;
+			position: relative;
+			top: 5px;
+		}
+		a.headermenu{ color: #7D6971; }
+		span.menufood {
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 14px;
+		}
+		span.addr {
+			font-family: Helvetica,Arial,sans-serif;
+			font-size: 10px;
+		}
+		li {
+			position: relative;
+			margin: 5px;
+		}
 	</style>
 </head>
 <body>
 <!-- TO BE DESIGNED FROM HERE -->
 <a class="header" href="index.html"><div class='test'>
 <div class='logo' id='logo'></div>
-<h1 class='titles'>Restaurants</h1></div></a>
-<h1>Podwawelem</h1>	
-ul. Św. Gertrudy 26-29<br/>
-31-069 Kraków<br/>
-POLAND<br/>
+<h1 class='titles'>Restaurants</h1></a>
+</div>
+<center>
+<div class='pageholder'>
+<div class='days'>
+
+		<span class='dayfri' onclick="javascript:document.getElementById('menufri').style.display = 'block';document.getElementById('menusat').style.display = 'none';">VRIJDAG</span>
+	
+
+		<span class='daysat' onclick="javascript:document.getElementById('menusat').style.display = 'block';document.getElementById('menufri').style.display = 'none';"">ZATERDAG</span>
+	
+</div>
 <br/>
-<a href="tel:0048124212336">Tel.: +48 12 421 23 36</a><br/><br/>
-Menu:<br/><br/>
-Cold appetizers<br/>
+</center>
+<center>
+
+<div class='menu' id='menufri'>
+	<span class='headermenu'><a class='headermenu' href="tel:0048123552900">IBIS hotel</a></span><br/> 
+	<span class='addr'>ul Pawia 15, Krakow</span><br/>
+	<img src="images/divider.gif"/><br/>
+	<span class='menufood'>
+<b>Cold appetizers</b><br/>
 <br/>
-Salomon carpaccio with oil, capers and lemon<br/>
-Wooden platter of sausages and meat, served with horseradish and beetroot salad<br/>
-Salad with tomatoes & mozzarella cheese<br/>
+<li>Salomon carpaccio with oil, capers and lemon<br/>
+<li>Wooden platter of sausages and meat, served with horseradish and beetroot salad<br/>
+<li>Salad with tomatoes & mozzarella cheese<br/>
 <br/>
-Soup<br/>
+<b>Soup</b><br/>
 <br/>
-Hungarian goulasz soup<br/>
-Sour rye soup with white sausage<br/>
+<li>Hungarian goulasz soup<br/>
+<li>Sour rye soup with white sausage<br/>
 <br/>
-Main courses<br/>
+<b>Main courses</b><br/>
 <br/>
-Pork ribs roasted with honey and nuts<br/>
-Roasted duck served with apples and red beetroot<br/>
-Grilled salmon served with potatoes and mixed vegetables<br/>
+<li>Pork ribs roasted with honey and nuts<br/>
+<li>Roasted duck served with apples and red beetroot<br/>
+<li>Grilled salmon served with potatoes and mixed vegetables<br/>
 <br/>
-Dessert<br/>
+<b>Dessert</b><br/>
 <br/>
-Apple strudel with ice creams<br/>
+<li>Apple strudel with ice creams<br/>
 <br/>
-includes water and coffee or tea and one Tyskie beer 0.4 l<br/>
-<!-- END OF PAGE -->
-<br/><br/><a href="index.html">BACK</a>
+*includes water and coffee or tea and one Tyskie beer 0.4 l<br/><br/>
+	</span>
+</div>
+
+<div class='menu' id='menusat' style="display: none;">
+	<span class='headermenu'><a class="headermenu" href="tel:0048124212336">Pod Wawelem</a></span><br/>
+	<span class='addr'> ul. Św. Gertrudy 26-29, Krakow</span><br/>
+	<img src="images/divider.gif"/><br/>
+	<span class='menufood'>
+<b>Starter</b><br/>
+<br/>
+<li>Chicken noodle bouillon
+<li>Onion cream soup
+<li>Chef salad 
+<li>Vegetables cream soup
+<li>Greek style salad 
+<li>Tomato soup with rice
+<br/><br/>
+<b>Maincourse</b><br/>
+<br/>
+<li>Pork chops, potatoes, fried cabbage salad/fresh vegetables
+<li>Beef cutlets in pepper sauce, potatoes dumplings, red cabbage
+<li>Fillet of chicken in tomato sauce, rice 
+<li>Grilled salmon in lemon sauce, potatoes, vegetables/fresh vegetables
+<li>Lasagna bolognese 
+<li>Tenderloin of pork in mushroom sauce, roasted potatoes, wok vegetables
+<br/><br/>
+<b>Dessert</b><br/>
+<br/>
+<li>Apple pie
+<li>Fruit salad
+<li>Panna Cotta with raspberry sauce 
+<li>Chocolate cake
+<li>Ice cream cup 
+<li>Lemon muse
+<br/><br/>
+
+</span>
+</div>
+</center>
+
+
+
+
+</div>
 </body>
 </html>
 
