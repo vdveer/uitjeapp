@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script src="cordova.js"></script>
-	<script src="general.js"></script>
+	<script src="hotel.js"></script>
 	<style>
 		body {
 			padding: 0;
@@ -64,6 +64,40 @@
 			font-family: Helvetica,Arial,sans-serif;
 		}
 		a.header { text-decoration:none; }
+		div.infoblock	 {
+			/*width: 200px;
+			height: 100px;*/
+			position: relative;
+			padding: 5px;
+			margin: 10px;
+			display: block;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			border-bottom-left-radius: 7px;
+			background: rgba(0, 0, 0, 0.25);
+		}	
+		span.header {
+			position: relative;
+			top: 10px;
+			bottom: 5px;
+			margin: 10px;
+			color: #FFFFFF;
+			font-family: Helvetica,Arial,sans-serif;
+		}
+		span.headerblack {
+			position: relative;
+			top: 10px;
+			bottom: 5px;
+			margin: 10px;
+			font-family: Helvetica,Arial,sans-serif;
+		}
+		span.copyright {
+			font-size: 10px; padding: 17px;
+		}
+		#hideZuipen, #hidegeschiedenis, #zien, #traditie, #hotelinfo{
+			margin: 10px;
+		}
 	</style>
 </head>
 <body>
@@ -71,15 +105,96 @@
 <a class="header" href="index.html"><div class='test'>
 <div class='logo' id='logo'></div>
 <h1 class='titles'>Hotel</h1></div></a>
+
+<div class='infoblock'>
+<span class='header' id='hotelinfoTitle' onclick="javascript:toggleElement('hotelinfo');">Hotel informatie <b>^</b></span><br/><br/>
+<div id='hotelinfo'>
+<span class='inhoud'>IBIS Krakow Stare Miasto<br/>
 ul Pawia 15<br/>
 31154 - KRAKOW<br/>
 POLAND<br/>
-<br/>
 <a href="tel:0048123552900">Tel.: (+48)12 355 29 00</a><br/><br/>
 Rooms: 135<br/>
-Your room: ??? (feature nog te bouwen)<br/>
+</span>
+</div>
+</div>
+
+<!-- start of infoblocks -->
+<div class='infoblock'>
+<span class='header' id='hidegeschiedenisTitle' onclick="javascript:toggleElement('hidegeschiedenis');">Geschiedenis <b>v</b></span><br/><br/>
+<div id="hidegeschiedenis" style="display: none;">
+<span class='inhoud'>
+Krakau ontstond rond een natuurlijke heuvel, de Wawel. De stad kwam tot ontwikkeling op een kruispunt van oude handelswegen: de Barnsteenroute van de Oostzee naar Rome, en de route van Byzantium naar Neurenberg (Nürnberg). Op de Wawel werd een burcht gebouwd, waar gedurende vijf eeuwen de Poolse koningen resideerden. Een van hen was Casimir de Grote, die in 1364 de nog steeds bestaande universiteit stichtte, na die van Praag de oudste in Midden-Europa.
+Vóór de 13de eeuw kende Polen geen steden in de toenmalig moderne betekenis. Krakau was een marktplaats bij een vorstelijke residentie. Het verschijnsel van een zichzelf regerende stad met vrije stadsburgers, georganiseerd in gilden van handels- en ambachtslieden, paste niet in de Poolse feodale samenleving waarin alleen de adel een zekere vrijheid bezat en het volk zich in horigheid onder deze kaste moest schikken. De Poolse vorsten zagen echter in dat de primitieve economie van Polen alleen tot bloei zou kunnen komen als ondernemende burgers zich in vrijheid konden ontplooien. De weerstand om de horigen die vrijheid te geven was onder de adel zo groot dat besloten werd om belangrijke marktplaatsen wel tot stad te verheffen, maar voor die nieuwe steden het Poolse recht niet aan te passen. Daarentegen zouden ze volgens buitenlands stadsrecht ingericht moeten worden, recht waarop Polen dan geen beroep zouden kunnen doen, zodat zij zich niet aan het gezag van de adel zouden kunnen onttrekken door naar die steden uit te wijken.
+</span><span class='inhoud'><br/><br/>
+In Midden-Europa was daarvoor dat doel het zogenaamd Duitse stadsrecht voorhanden en in het geval van Krakau werd in 1257 meer specifiek het Maagdenburger, dat wil zeggen aan de stad Maagdenburg ontleende, recht als charter overgenomen. De nieuwe steden waaronder Krakau werden voorlopig bevolkt met buitenlanders, in dit geval afkomstig uit het Duitse Rijk. In de 13de en 14de eeuw was de burgerij dan ook voornamelijk Duits van afkomst. Pas in de loop der eeuwen verzwakte de tegenstand van de adel en werd ook aan Polen stadsburgerrecht toegestaan, die na verloop van tijd de overhand namen. Zo behoorde in Krakau de Mariakerk eerst aan de Duitstalige parochie en werd de St. Barbarakerk voor de Polen gesticht. De Duitse bestuurstaal van de stadsraad en de gilden werd in de 15de eeuw gaandeweg vervangen door de Poolse en in de 16de eeuw zou Krakau ook cultureel een Poolse stad worden en nam ook de adel er zijn plaats in naast de burgerij. Het stedelijk patriciaat bleef nog wel tot in de 16de eeuw Duits spreken, mede vanwege de onontbeerlijke handelsrelaties tot de steden in het Duitse Rijk.</span><span class='inhoud'><br/><br/>
+Op de Wawel bevindt zich naast de burcht ook de kathedraal.
+Onder aan die heuvel bevindt zich de drakengrot. Het verhaal gaat dat daar in de Middeleeuwen een draak (Smok Wawelski) woonde die elke dag gevoerd werd met vee (schapen en varkens). Koning Krak beloofde dat diegene die de draak zou verslaan, met zijn dochter mocht trouwen. Een schoenmaker durfde het aan. Hij slachtte een schaap, vulde dat met zwavel en naaide het weer dicht. De draak at dit schaap, vloog in brand en sprong in de Wisła. Daar dronk hij zoveel dat het beest open barstte. Sindsdien is er alleen nog de grot met daarvoor een koperen beeld van een draak.</span><span class='inhoud'><br/><br/>
+Krakau kwam bij de Derde Poolse Deling (1795) aan Oostenrijk, maar werd in 1809 door Napoleon veroverd en bij het door hem ingestelde Hertogdom Warschau gevoegd. Dit hertogdom werd na de val van Napoleon ontmanteld en op het Congres van Wenen aan Rusland (Congres-Polen) en Pruisen (Posen) toegekend. Aangezien men het over Krakau niet eens werd, verklaarde men deze stad en de omliggende gebieden tot vrije, onafhankelijke en strikt neutrale stad. Deze Republiek Krakau werd in 1846 door Oostenrijk geannexeerd. Na de Eerste Wereldoorlog werd de stad in 1919 weer Pools.
+Tijdens de Tweede Wereldoorlog was Krakau de hoofdstad van het nazi-Duitse General-Gouvernement en woonde Hans Frank in de Wawel.
+</span></div></div>
+
+
+<div class='infoblock'>
+<span class='header' id='hideZuipenTitle' onclick="javascript:toggleElement('hideZuipen');">Nightlife <b>v</b></span><br/><br/>
+<div id='hideZuipen' style="display: none;">
+<span class='inhoud'>Let's start with the pubs. Now whereas many a young Pole feels that it is perfectly OK to rock up to a club at ten o'clock and make themselves comfortable for the night, the English amongst us know that this nefarious practice is in fact illegal. All nights out, by orders of Her Majesty The Queen (whose authority bypasses such frivolities as international borders) must start in a bar­ and no later than eight o'clock! Luckily for those of you who share this Anglican ideology, Krakow proves to be something of an alcoholic's paradise. There is a fantastic selection of pubs and bars, often housed in attractive subterranean cellars, which will serve you their finest piwo (beer) for around eight zloty a time (that's about a pound and a half, or two euros). One such cellar bar (or 'piwnice' as they are known in Polish) is Piec Art. These types of places attract a young academic crowd, relatively free of tourists, and are great places to savour a pre-club beer and build up the excitement before the carnage begins in earnest. Piec Art also hosts the occassional jazz night. If though you prefer something a little less studenty and a bit more swanky, then Boogie Bar and Shakers Club are the upmarket joints that are aimed at the money crowd. But then again why not chill out in the relaxing confines of the Budda Drink and Garden, or watch the world go by from any of the many cafés in the main square? When it comes to drinking this city simply spoils you for choice! 
+</span><span class='inhoud'><br/><br/>
+If Krakow isn't short of a bar or two (about two hundred in total by all accounts), then you don't have to go very much further to find a club. The roads leading onto the main square are chock full of doorways, which, unnoticed during the day, sprout big burly doorman at night and entice you in with the powerful thump of a familiar bass-line. Although there are clubs that cater for every taste, the vast majority of venues plump for the lowest common denominator soundtrack of house and techno, splash out on a nice bit of décor and succeed in attracting a mix of tarted-up girls and the usual suspects trying to pull them - or get dead drunk trying. Frantic on Szewska features very palatable house and the girls are tops. There's a second room for hip-hop, and usually the entire place is ram-packed from Thursday to Saturday, whilst Goraczka next door plays cheesy party music and is lively every night of the week, even on Sundays (and if all the good girls are at church that leaves only the bad girls, right?). 
+</span><span class='inhoud'><br/><br/>
+Whereas you can enjoy full-scale carnage at any of the above if (like the author of this guide!) you are a something of a 'club snob', then don't despair - there are a few genuinely great places in Krakow hosting serious music nights for the more discerning party-goer. Near the top of the list is Rdza, which has welcomed drum and bass acts as famous as Andy C on back-to-back nights with Makoto feat. MC Deeizim, whilst Ministerstwo is another good alternative to the generic tourist traps, and a worthy addition to the Krakow nightlife scene. But of course, when it comes to the big players no guide to Krakow's nightlife would be complete without mentioning Krakow's most wayward child, Prozak. With its shameless (and yet not entirely without merit) door policy of letting in only fit Polish girls and rich foreign men you might expect the worst, but it regularly stumps up stunningly original house and techno sets that are surely wasted on some of the clientele. Needless to say that if you feel differently please keep us informed by posting a review! 
+</span><span class='inhoud'><br/><br/>
+Did someone say they don't like dance music? Shame on you, but fear not - when the thought of yet another night of 130bpm blasted at your poor lugholes gets too much, then you can visit one of Krakow's 'alternative' venues, for 'alternative' people. Carpe Diem I and II and the Tower Pub dish up the metal to the rock kids; and, if you want a truly Polish experience, check out a ragga party at Art Klub Bledne Kolo, which by the way also hosts some pretty wild electro parties, normally on Saturdays. Finally, housed in the same building on Wielopole street, Caryca, Lubu-Dubu and Kitsch add further diversity to the Krakow nightlife experience, and each come complete with their own cult following. Kitsch is one of the only gay bars in town and is famous for throwing a riotous party until the very early hours. (Editorial note - these 3 clubs on Wielopole are currently CLOSED due to buillding regulations, but we will keep this page updated should they re-open) 
+</span><span class='inhoud'><br/><br/>
+If all that isn't enough to keep you entertained in Krakow then you will be pleased to know that this is just the sand in the city's bikini, and there's plenty more left on the proverbial beach. Besides the Old Town the reinvigorated area of Kazimierz is rapidly enlarging its reputation as the place to be right now. A bevy of bars and cafes and a couple of clubs are pulling the arty crowd away from the tourist hordes in the main square and preserving a genuinely sophisticated drinking scene in the unique Jewish Quarter. The majority of the best venues can be found in and around the Plac Nowy, the funkiest of which is surely the ultra-hip Alchemia. Worth its weight in gold on any day of the week, it also hosts various concerts and performances in the shadowy depths of its downstairs. More upmarket, Le Scandale is the name on the lips of those in the know. But if you are looking for romance (viz. a cheap lay) be warned, the Kazimierz crowd wouldn't look out of place in Hoxton's finest and the chat up line 'do you speak English?' doesn't guarantee the same sort of success that it does in the tackier joints around the Old Town. 
+</span><span class='inhoud'><br/><br/>
+One more thing you should remember about Krakow's nightlife is that it is heavily influenced by the seasons. As summer rolls on and the Polish students finish their exams and jet off to man the bars of London and Dublin, or to venture even further afield, the scene will change considerably. Their number will easily be replaced by the high season's tourists and it's a safe bet that anywhere with seats in the sun, plus all the clubs around the Main Square, will be doing a roaring trade as excited young hedonists on holiday hustle at the bar to be the first to spend their zloty. It's not real money after all! 
+</span>
+</div>
+</div>
+
+<div class='infoblock'>
+<span class='header' id='zienTitle' onclick="javascript:toggleElement('zien');">Bezienswaardigheden <b>v</b></span><br/><br/>
+<div id='zien' style="display: none;">
+<span class='inhoud'>
+Krakau was in 2000 samen met acht andere steden Culturele hoofdstad van Europa. Het centrum van de stad heeft de diverse oorlogen ongeschonden doorstaan en is derhalve historisch zeer interessant. De oudste nog bestaande gebouwen (in Ulica Kanonicza) stammen uit het begin van de 13e eeuw. De rest van de bebouwing is in de verschillende eeuwen daarna gebouwd en/of verbouwd, hetgeen veel verschillende bouwstijlen bijeen brengt. Er zijn vooral veel gebouwen in renaissancestijl.
+</span><span class='inhoud'><br/><br/>
+Rynek Główny
+
+Het hart van Krakau is de Rynek Główny (Grote Markt; Rynek stamt van het Duitse Ring, dat is het plein rond een raadhuis) samen met de Rynek Mały (Kleine Markt). De Rynek Główny is een van de grootste en mooiste marktpleinen van Europa. Het plein is in de 13e eeuw ontworpen en meet ongeveer tweehonderd bij tweehonderd meter. Aan elke zijde komen drie straten bij de markt. Elk van deze straten leidde naar de stadsmuur, waarvan elke tweede naar een stadspoort leidde. De meeste straten in het centrum zijn evenwijdig aan de straten die vanuit de markt vertrekken en zijn steeds op ongeveer dezelfde afstand van elkaar aangelegd, zodat de ruimtes tussen de straten vrijwel vierkant zijn. De weinige afwijkingen op dit patroon worden veroorzaakt doordat men enkele straten van vóór het ontwerpplan van de Rynek Główny in het plan moest inpassen.
+
+Aan de rand van het marktplein staat de Mariakerk (Kosciół Mariacki). Het wereldberoemde hoogaltaar is gemaakt door de Neurenbergse beeldhouwer Veit Stoss, die in Polen tot Wit Stwosz is omgedoopt. Op het plein staan diverse gebouwen in verschillende stijlen: de Raadhuistoren (Ratusz), de Lakenhal (Sukiennice) en de Kerk van Sint-Adalbert (Św. Wojciech). Eén van de mooiste classicistische kerken uit de barokperiode in Polen is de Sint-Annakerk in de nabijheid van het marktplein, naar ontwerp van de toentertijd in Polen zeer actieve Nederlandse architect Tielman van Gameren. Eveneens in koninklijke dienst werkte de beroemde Duitse beeldhouwer Andreas Schlüter waarvan nog vele monumenten, ook in kerken en paleizen in Krakau aanwezig zijn.
+</span><span class='inhoud'><br/><br/>
+Wawel
+
+De heuvel heeft een hoogte van 228 m en ligt op de oever van de Wisła, op de zuidwestpunt van het centrum. Op die heuvel bevinden zich talrijke historische gebouwen. Het belangrijkst zijn de Wawelkathedraal en het kasteel van Wawel. Onder de heuvel bevindt zich de Drakengrot.
+</span><span class='inhoud'><br/><br/>
+Planty
+Planty is een stadspark, dat is aangelegd rondom de oude stad. In het noordelijk deel hiervan bevinden zich nog steeds Barbakan en de Florianuspoort, onderdeel van de stadsmuur.
+</span><span class='inhoud'><br/><br/>
+Wieliczka-zoutmijn<br/>
+De zoutmijn ligt net buiten Krakau en heeft veel bijgedragen aan de welvaart van de stad.
+</span><span class='inhoud'><br/><br/>
+Kazimierz<br/>
+Behalve voor rooms-katholieken is Krakau ook voor Joden een belangrijke stad: zij kwamen vooral vanaf de Dertigjarige Oorlog in groten getale in Kroke wonen, hoofdzakelijk in de wijk Kazimierz. In 1943 werd het getto van Krakau vernietigd: de meesten van de 70.000 Joden die voor de Tweede Wereldoorlog in Krakau woonden overleefden de Holocaust niet. Momenteel wonen er nog maar 180 Joden in Krakau
+</span>
+</div>
+</div>
+
+<div class='infoblock'>
+<span class='header' id='traditieTitle' onclick="javascript:toggleElement('traditie');">Tradities <b>v</b></span><br/><br/>
+<div id='traditie' style="display: none;">
+<span class='inhoud'>Hejnał. Elk uur speelt vanaf de hoogste toren van de Mariakerk (Kosciół Mariacki) een trompetblazer een melodie die plotseling afgebroken wordt. De 'hejnał' was het signaal om de stadspoorten te openen of te sluiten en werd elke ochtend en avond gespeeld. De legende gaat dat in de Middeleeuwen een torenwachter vanaf de noordelijke toren van de kerk de Tataren zag komen. Hij wilde zijn stadsgenoten waarschuwen en speelde op zijn trompet. Zijn trompetspel werd plotseling afgebroken omdat hij geraakt werd door een pijl. Desondanks konden dankzij zijn oplettendheid de stadspoorten net op tijd worden gesloten en de Tartaarse aanval worden afgewend. Sinds de 19e eeuw wordt deze afgebroken 'hejnał' als herinnering aan deze gebeurtenis elk uur gespeeld. Sinds 1927 speelt de Poolse radio deze melodie dagelijks om 12 uur 's middags.
+</span><span class='inhoud'><br/><br/>
+Lajkonik. Elk jaar op de eerste donderdag na Sacramentsdag (tweede donderdag na Pinksteren) komt de 'Lajkonik' in de stad. De held van het feest rijdt, verkleed als Tataar, op een houten paard de stad in. Hij wordt begeleid door muziek. Sommige mannen dragen die dag een traditioneel kostuum van Krakau. De processie begint bij het klooster in Zwierzyniec en eindigt twee tot drie uur later voor de markthal op de 'Rynek'.
+</span><span class='inhoud'><br/><br/>
+Kerststallen of Szopka's van Krakau. Elk jaar, begin december, wedijveren vele families in Krakau met elkaar met hun zelfgebouwde kerststal of 'szopka'. Die kerststallen worden uitgestald bij de Kosciół Mariacki. In de kerststallen verwerken ze vele elementen van gebouwen uit Krakau. Vaak zijn de torens van de Mariakerk te herkennen of de gouden koepel van de kathedraal op de Wawel. En de drakengrot is er ook vaak in te zien. Na de jurering worden de mooiste kerststallen in het historisch museum uitgestald.
+</span>
+</div>
+</div>
+<span class='copyright'>Bron: wikipedia.org</span>
+<!-- end of infoblocks -->
 <!-- END OF PAGE -->
-<br/><br/><a href="index.html">BACK</a>
 </body>
 </html>
 
