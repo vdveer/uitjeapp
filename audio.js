@@ -5,7 +5,7 @@ function playsound(filename){
 	if(mediaplayer != undefined){
 		mediaplayer.release();
 	}
-	mediaplayer = new Audio(lastsong).play();
+	mediaplayer = new Media(lastsong, function(){}, onAudioFail).play();
 }
 
 function onAudioFail(){
