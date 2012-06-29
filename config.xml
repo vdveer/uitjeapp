@@ -49,7 +49,7 @@
 	
 	<!--<preference name="autorotate" value="false" readonly="true"/>-->
 	
-<!--	<preference name="permissions" value="none"/>-->
+	<preference name="permissions" value="none"/>
 
 	<!-- to enable individual permissions use the following examples -->
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
