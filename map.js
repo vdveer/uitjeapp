@@ -38,6 +38,7 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 
 			var hotel = new L.Marker(new L.LatLng(50.07073, 19.94526));
 			var restaurant = new L.Marker(new L.LatLng(50.05461, 19.93934));
+		 	var lunch = new L.Marker(new L.LatLng(50.06064, 19.94027));
 
 			var popupContent = 'Huidige locatie.', popup = new L.Popup();
 
@@ -45,13 +46,16 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 
 			hotel.bindPopup("IBIS Stare miasto.");
 			restaurant.bindPopup("Restaurant Pod Wawelem.");
+			lunch.bindPopup("Restaurant Aperitif");
 
 			hotel.on('click', function(e){e.openPopup();});
 			restaurant.on('click', function(e){e.openPopup();});
+			lunch.on('click', function(e){e.openPopup();});
 			
 			map.addLayer(cloudmade);
 			map.addLayer(restaurant);
 			map.addLayer(hotel);
+			map.addLayer(lunch);
 	
 			map.on('locationfound', onLocationFound);
 			map.on('locationerror', onLocationError);
