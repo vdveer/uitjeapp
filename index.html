@@ -54,13 +54,18 @@
 		<center><img src="images/contact64.png" />
 		<span>Contact</span></center>
 	</a>
-</div></center>
 </div>
 
- <script type="text/javascript">
- if(window.applicationCache)
- 	window.applicationCache.update();
+<script type="text/javascript">
+ 	if(navigator.onLine) {
+ 		document.write("<a id='download' href=\"\" onclick=\"javascript:CACHING.doCacheAll();\">Cache everything</a>");
+ 	}
  </script>
+
+ </center>
+</div>
+
+
 
 <!-- END OF PAGE -->
 </body>
