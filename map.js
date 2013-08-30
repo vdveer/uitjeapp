@@ -30,23 +30,23 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 
 			var cloudmadeUrl = '{z}/{x}/{y}.png',
 				cloudmadeAttribution = '<a href="http://openstreetmap.org/">OSM</a> --- <a href="http://topicus.nl/">Topicus</a>',
-				cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 16, minZoom: 8, attribution: cloudmadeAttribution});
+				cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 17, minZoom: 8, attribution: cloudmadeAttribution});
 
 			map.addControl(TextButtonControl(LocationFunction,"Current", "topright")); 
-			map.addControl(TextButtonControl(KrakowFunction,"Krakow", "topright")); 
+			map.addControl(TextButtonControl(KrakowFunction,"Budapest", "topright")); 
 			map.addControl(TextButtonControl(BackFunction,"BACK", "bottomleft")); 
 
-			var hotel = new L.Marker(new L.LatLng(50.07073, 19.94526));
-			var restaurant = new L.Marker(new L.LatLng(50.05461, 19.93934));
-		 	var lunch = new L.Marker(new L.LatLng(50.06064, 19.94027));
+			var hotel = new L.Marker(new L.LatLng(47.491493,19.057835));
+			var restaurant = new L.Marker(new L.LatLng(47.486919,19.063339));
+		 	var lunch = new L.Marker(new L.LatLng(47.500489,19.052074));
 
 			var popupContent = 'Huidige locatie.', popup = new L.Popup();
 
 			popup.setContent(popupContent);
 
-			hotel.bindPopup("IBIS Stare miasto.");
-			restaurant.bindPopup("Restaurant Pod Wawelem.");
-			lunch.bindPopup("Restaurant Aperitif");
+			hotel.bindPopup("Hotel Erzsébet");
+			restaurant.bindPopup("Voros Postakocsi");
+			lunch.bindPopup("Meetingpoint biketour");
 
 			hotel.on('click', function(e){e.openPopup();});
 			restaurant.on('click', function(e){e.openPopup();});
@@ -103,7 +103,7 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 
 
 LocationFunction = function () { map.locate(); }; 
-KrakowFunction = function(){ map.setView(new L.LatLng(50.061657,19.93731), 14); };
+KrakowFunction = function(){ map.setView(new L.LatLng(47.4961,19.0444), 14); };
 BackFunction = function(){ window.location = "index.html"; };
 
 document.addEventListener("deviceready", initmap, false);
