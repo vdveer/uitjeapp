@@ -56,10 +56,15 @@
 	</a>
 </div>
 
+<span id='status'></span>
+
 <script type="text/javascript">
- 	if(navigator.onLine) {
- 		document.write("<a id='download' href=\"\" onclick=\"javascript:CACHING.doCacheAll();\">Cache everything</a>");
- 	}
+ 	applicationCache.onupdateready = function(){
+ 		document.getElementById('status').innerHTML = "Update downloaded";
+ 	};
+ 	applicationCache.noupdate = function(){
+ 		document.getElementById('status').innerHTML = "Up to date";
+ 	};
  </script>
 
  </center>
