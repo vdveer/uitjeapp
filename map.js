@@ -76,7 +76,7 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 				map.setView(e.latlng, 8);
 
 				if(isInCracow(e.latlng)){ 
-					map.setZoom(14);
+					map.setZoom(12);
 					//alert('in krakow'); 
 				} 
 				else { 
@@ -92,7 +92,7 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 
 			function isInCracow(l){
 				//alert('in function');
-				if(l.lat < 50.08116 && l.lat > 50.0416 && l.lng < 19.97829 && l.lng > 19.91152){
+				if(l.lat < 47.74579 && l.lat > 47.22983 && l.lng < 19.48563 && l.lng > 18.66028){
 					return true;
 				}
 				return false;			
@@ -103,7 +103,7 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 
 
 LocationFunction = function () { map.locate(); }; 
-KrakowFunction = function(){ map.setView(new L.LatLng(47.4961,19.0444), 14); };
+KrakowFunction = function(){ map.setView(new L.LatLng(47.491493,19.057835), 17); };
 BackFunction = function(){ window.location = "index.html"; };
 
 document.addEventListener("deviceready", initmap, false);
