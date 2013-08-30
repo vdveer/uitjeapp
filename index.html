@@ -55,7 +55,13 @@
 	</a>
 </div>
 
-<span>Cache status: </span><span id='status'>Unknown</span>
+<span>Cache status: </span><span id='status'>Working offline now</span>
+
+<script type="text/javascript">
+	if(!window.onLine){
+		document.getElementById("status").innerHTML = "Working offline now";
+	}
+</script>
 
  </center>
 </div>
