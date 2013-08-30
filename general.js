@@ -21,3 +21,6 @@ if(window.applicationCache){
 }else {
 	document.getElementById("status").innerHTML = "Not supported"
 }
+if(!window.onLine){
+	document.getElementById("status").innerHTML = "Working offline now";
+}
