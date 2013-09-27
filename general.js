@@ -1,36 +1,39 @@
-var CACHING = {
+var totalFiles = 559;
+var downloaded = 0;
 
-doCacheAll: function(){
+if(window.applicationCache){
+ 	window.applicationCache.addEventListener("updateready", function(e){
+ 		document.getElementById("status").innerHTML = "Available offline";
+ 		if(!window.onLine){
+		document.getElementById("status").innerHTML = "Working offline now";
+	}
+ 	}, false);
+ 	window.applicationCache.addEventListener("cached", function(e){
+ 		document.getElementById("status").innerHTML = "Available offline";
+ 		if(!window.onLine){
+		document.getElementById("status").innerHTML = "Working offline now";
+	}
+ 	}, false);
+ 	window.applicationCache.addEventListener("checking", function(e){
+ 		document.getElementById("status").innerHTML = "Checking";
+ 		if(!window.onLine){
+		document.getElementById("status").innerHTML = "Working offline now";
+	}
+ 	}, false);
+ 	window.applicationCache.addEventListener("noupdate", function(e){
+ 		document.getElementById("status").innerHTML = "Available offline";
+ 		if(!window.onLine){
+		document.getElementById("status").innerHTML = "Working offline now";
+	}
+ 	}, false);
+ 	window.applicationCache.addEventListener("downloading", function(e){
+ 		downloaded++;
+ 		document.getElementById("status").innerHTML = "Downloading... [" + downloaded + "/" + totalFiles + "]"; 
+ 		if(!window.onLine){
+		document.getElementById("status").innerHTML = "Working offline now";
+	}
+ 	}, false);
 
-	var element = document.getElementById('download');
-	element.setAttribute("onclick", "");
-	element.innerHTML = "Downloading... 0%";
-	
-	var myLoader = html5Preloader();
-
-	myLoader.on('finish', function(){ console.log('All assets loaded.'); });
-	myLoader.on('error', function(e){ console.error(e); });
-
-	myLoader.addFiles('activities.html',
-'audio.js',
-'config.xml',
-'contact.html',
-'general.js',
-'home.css',
-'hotel.html',
-'hotel.js',
-'icon.png',
-'index.html',
-'leaflet.css',
-'leaflet.ie.css',
-'leaflet.js',
-'map.html',
-'map.js',
-'polish.html',
-'restaurant.css',
-'restaurant.html');
-
+}else {
+	document.getElementById("status").innerHTML = "Not supported"
 }
-
-
-};

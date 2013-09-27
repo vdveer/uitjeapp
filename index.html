@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="home.css" />
-	<script type="text/javascript" src="html5Preloader.js"></script>
 	<script type="text/javascript" src="general.js"></script>
 </head>
 <body>
@@ -56,16 +55,13 @@
 	</a>
 </div>
 
-<span id='status'></span>
+<span>Cache status: </span><span id='status'>Working offline now</span>
 
 <script type="text/javascript">
- 	applicationCache.onupdateready = function(){
- 		document.getElementById('status').innerHTML = "Update downloaded";
- 	};
- 	applicationCache.noupdate = function(){
- 		document.getElementById('status').innerHTML = "Up to date";
- 	};
- </script>
+	if(!window.onLine){
+		document.getElementById("status").innerHTML = "Working offline now";
+	}
+</script>
 
  </center>
 </div>

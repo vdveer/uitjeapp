@@ -1,16 +1,14 @@
 CACHE MANIFEST
-#version 1.0
+#version 1.5
 
 CACHE:
 
 index.html
+general.js
 activities.html
 audio.js
 config.xml
 contact.html
-general.js
-html5Preloader.js
-rotary_extension.js
 home.css
 hotel.html
 hotel.js
