@@ -36,26 +36,35 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 			map.addControl(TextButtonControl(KrakowFunction,"Budapest", "topright")); 
 			map.addControl(TextButtonControl(BackFunction,"BACK", "bottomleft")); 
 
-			var hotel = new L.Marker(new L.LatLng(47.491493,19.057835));
+			var hotel = new L.Marker(new L.LatLng(47.494137, 19.059812));
 			var restaurant = new L.Marker(new L.LatLng(47.486919,19.063339));
 		 	var lunch = new L.Marker(new L.LatLng(47.500489,19.052074));
+		 	var trap1 = new L.Marker(new L.LatLng(1,1));
+		 	var trap2 = new L.Marker(new L.LatLng(1,2));
 
 			var popupContent = 'Huidige locatie.', popup = new L.Popup();
 
 			popup.setContent(popupContent);
 
-			hotel.bindPopup("Hotel Erzsébet");
+			hotel.bindPopup("Hotel Astoria");
 			restaurant.bindPopup("Voros Postakocsi");
 			lunch.bindPopup("Meetingpoint biketour");
+			trap1.bindPopup("TRAP room 1");
+			trap2.bindPopup("TRAP room 2");
 
 			hotel.on('click', function(e){e.openPopup();});
 			restaurant.on('click', function(e){e.openPopup();});
 			lunch.on('click', function(e){e.openPopup();});
+			trap1.on('click', function(e){e.openPopup();});
+			trap2.on('click', function(e){e.openPopup();});
+
 			
 			map.addLayer(cloudmade);
 			map.addLayer(restaurant);
 			map.addLayer(hotel);
 			map.addLayer(lunch);
+			map.addLayer(trap1);
+			map.addLayer(trap2);
 	
 			map.on('locationfound', onLocationFound);
 			map.on('locationerror', onLocationError);
@@ -103,7 +112,7 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 
 
 LocationFunction = function () { map.locate(); }; 
-KrakowFunction = function(){ map.setView(new L.LatLng(47.491493,19.057835), 17); };
+KrakowFunction = function(){ map.setView(new L.LatLng(47.494137, 19.059812), 17); };
 BackFunction = function(){ window.location = "index.html"; };
 
 document.addEventListener("deviceready", initmap, false);
