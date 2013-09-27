@@ -39,8 +39,9 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 			var hotel = new L.Marker(new L.LatLng(47.494137, 19.059812));
 			var restaurant = new L.Marker(new L.LatLng(47.486919,19.063339));
 		 	var lunch = new L.Marker(new L.LatLng(47.500489,19.052074));
-		 	var trap1 = new L.Marker(new L.LatLng(1,1));
+		 	var trap1 = new L.Marker(new L.LatLng(47.491319,19.068639));
 		 	var trap2 = new L.Marker(new L.LatLng(1,2));
+		 	var boat = new L.Marker(new L.LatLng(47.497687,19.046718));
 
 			var popupContent = 'Huidige locatie.', popup = new L.Popup();
 
@@ -49,22 +50,23 @@ TextButtonControl = function(theLocationFunction, buttonTXT, positionTXT) {
 			hotel.bindPopup("Hotel Astoria");
 			restaurant.bindPopup("Voros Postakocsi");
 			lunch.bindPopup("Meetingpoint biketour");
-			trap1.bindPopup("TRAP room 1");
+			trap1.bindPopup("TRAP rooms");
 			trap2.bindPopup("TRAP room 2");
+			boat.bindPopup("Vertrekpunt boot");
 
 			hotel.on('click', function(e){e.openPopup();});
 			restaurant.on('click', function(e){e.openPopup();});
 			lunch.on('click', function(e){e.openPopup();});
 			trap1.on('click', function(e){e.openPopup();});
 			trap2.on('click', function(e){e.openPopup();});
+			boat.on('click', function(e){e.openPopup();});
 
-			
 			map.addLayer(cloudmade);
 			map.addLayer(restaurant);
 			map.addLayer(hotel);
 			map.addLayer(lunch);
 			map.addLayer(trap1);
-			map.addLayer(trap2);
+			map.addLayer(boat);
 	
 			map.on('locationfound', onLocationFound);
 			map.on('locationerror', onLocationError);
